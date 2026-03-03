@@ -1,50 +1,36 @@
-#pragma once
-#include <string.h>
 #include "movie.h"
-
+Movie::Movie () {}
 Movie::Movie(char* name , int year , double imdbScore , int length) {
-    if (name != nullptr) {
-        strncpy (this->name , name , 255);
-        this->name[255] = '\0';
-    }
-    else {
-        this->name[0] = '\0';
-    }
+    this->name = name;
     this->year = year ;
     this->imdbScore = imdbScore;
     this->length = length;
 }
-void Movie::setName(char name[]) {
-    if (name != nullptr) {
-        strncpy (this->name , name , 255);
-        this->name[255] = '\0';
-    }
-    else {
-        this->name[0] = '\0';
-    }
+void Movie::set_name(char* name) {
+    this->name = name;
 }
-char* Movie::getName() {
+char* Movie::get_name() {
     return name ;
 }
-void Movie::setYear (int year) {
+void Movie::set_year (int year) {
     this->year = year ;
 }
-int Movie::getYear () {
+int Movie::get_year () {
     return year;
 }
-void Movie::setImdbScore (double imdbScore) {
+void Movie::set_score (double imdbScore) {
     this->imdbScore = imdbScore;
 }
-double Movie::getImdbScore () {
+double Movie::get_score () {
     return imdbScore;
 }
-void Movie::setLength (int length) {
+void Movie::set_length (int length) {
     this->length = length;
 }
-int Movie::getLength () {
+int Movie::get_length () {
     return length;
 }
-int Movie::getYearsPassed () {
+int Movie::get_yearsPassed () {
     int yearsPassed ;
     yearsPassed = 2026 - year ;
     return yearsPassed;
