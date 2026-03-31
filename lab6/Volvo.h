@@ -1,0 +1,11 @@
+#pragma once
+
+#include "Car.h"
+
+class Volvo : public Car {
+    public:
+        double GetFuelCapacity() const override;
+        double GetFuelConsumption() const override;
+        double GetAverageSpeed(Weather condition) const override;
+        const char* GetName() const override;
+};
